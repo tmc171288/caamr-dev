@@ -52,21 +52,24 @@ export const handler: Handlers<EditPostData> = {
       .map((t) => t.trim())
       .filter((t) => t);
 
+    // Helper to escape quotes in YAML values
+    const escapeYAML = (str: string) => str.replace(/"/g, '\\"');
+
     let frontmatter = `---
-title: ${title}
-date: ${date}
-excerpt: ${excerpt}
-author: ${author}`;
+title: "${escapeYAML(title)}"
+date: "${date}"
+excerpt: "${escapeYAML(excerpt)}"
+author: "${escapeYAML(author)}"`;
 
     if (tagsArray.length > 0) {
       frontmatter += `
 tags:
-${tagsArray.map((t) => `  - ${t}`).join("\n")}`;
+${tagsArray.map((t) => `  - "${escapeYAML(t)}"`).join("\n")}`;
     }
 
     if (thumbnail) {
       frontmatter += `
-thumbnail: ${thumbnail}`;
+thumbnail: "${escapeYAML(thumbnail)}"`;
     }
 
     frontmatter += `
@@ -203,11 +206,11 @@ export default function EditPostPage({ data }: PageProps<EditPostData>) {
               </label>
               <textarea
                 name="content"
-                value={post.content}
                 rows={15}
                 class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none font-mono"
                 required
               >
+                {post.content}
               </textarea>
               <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">
                 Mẹo: Dùng <code>![Mô tả](link-ảnh)</code> để chèn hình ảnh.

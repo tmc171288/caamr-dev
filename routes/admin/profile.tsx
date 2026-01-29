@@ -22,13 +22,15 @@ export const handler: Handlers<ProfileData> = {
     const avatar = form.get("avatar")?.toString() || "";
     const title1 = form.get("title1")?.toString() || "";
     const title2 = form.get("title2")?.toString() || "";
+    const title3 = form.get("title3")?.toString() || "";
     const bio1 = form.get("bio1")?.toString() || "";
     const bio2 = form.get("bio2")?.toString() || "";
+    const bio3 = form.get("bio3")?.toString() || "";
 
     await updateProfile({
       avatar,
-      titles: [title1, title2].filter(Boolean),
-      bio: [bio1, bio2].filter(Boolean),
+      titles: [title1, title2, title3].filter(Boolean),
+      bio: [bio1, bio2, bio3].filter(Boolean),
     });
 
     return new Response("", {
@@ -110,6 +112,13 @@ export default function AdminProfile({ data }: PageProps<ProfileData>) {
                   class="rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-3 py-2 border w-full"
                   placeholder="Dòng 2 (ví dụ: Hay còn gọi là...)"
                 />
+                <input
+                  type="text"
+                  name="title3"
+                  defaultValue={data.titles[2]}
+                  class="rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-3 py-2 border w-full"
+                  placeholder="Dòng 3 (tùy chọn)"
+                />
               </div>
             </div>
 
@@ -124,17 +133,27 @@ export default function AdminProfile({ data }: PageProps<ProfileData>) {
                 <textarea
                   name="bio1"
                   rows={2}
-                  defaultValue={data.bio[0]}
                   class="rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-3 py-2 border w-full"
                   placeholder="Mô tả tiếng Việt..."
-                />
+                >
+                  {data.bio[0]}
+                </textarea>
                 <textarea
                   name="bio2"
                   rows={2}
-                  defaultValue={data.bio[1]}
                   class="rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-3 py-2 border w-full"
                   placeholder="English description..."
-                />
+                >
+                  {data.bio[1]}
+                </textarea>
+                <textarea
+                  name="bio3"
+                  rows={2}
+                  class="rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-3 py-2 border w-full"
+                  placeholder="Dòng bổ sung (tùy chọn)..."
+                >
+                  {data.bio[2]}
+                </textarea>
               </div>
             </div>
 

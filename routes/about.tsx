@@ -36,7 +36,7 @@ export default function About({ data }: PageProps<AboutData>) {
               </div>
             </div>
             <div>
-              <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-0 mb-4 h-[3.5rem] flex items-center">
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-0 mb-4 h-[3.5rem] flex items-center">
                 <Typewriter
                   strings={profile.titles}
                   typeSpeed={50}
@@ -44,12 +44,51 @@ export default function About({ data }: PageProps<AboutData>) {
                   className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 drop-shadow-md"
                 />
               </h2>
-              <p class="text-gray-600 dark:text-gray-400 text-lg">
-                Tôi là một developer đam mê công nghệ. Tôi yêu thích việc **dạy
-                học** và **chia sẻ kiến thức** lập trình đến với mọi người. Blog
-                này là nơi tôi tổng hợp những kinh nghiệm thực chiến và các bài
-                học bổ ích.
-              </p>
+              <div class="text-gray-600 dark:text-gray-400 text-lg">
+                🧘Thầy Sư Viết Code{"  "}
+                <strong>Đạo Hạnh Fullstack, Tâm Tịnh Debug</strong>. Ngày xưa,
+                thầy vốn là người tu hành, sống ẩn dật giữa rừng sâu… cho đến
+                một ngày, khi đang thiền dưới gốc bồ đề, thầy nghe tiếng gọi từ
+                vũ trụ:
+              </div>
+              <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 transition-all duration-300 hover:from-primary-600 hover:to-primary-600 dark:hover:from-primary-400 dark:hover:to-primary-400">
+                “npm install enlightenment”.
+              </div>
+              <br />
+              <div class="text-gray-600 dark:text-gray-400 text-lg">
+                Từ đó, thầy bước vào con đường lập trình giác ngộ, chuyên trị
+                bugs, hóa giải lỗi 500, và truyền đạo lý clean code cho chúng
+                sinh. Thầy không chỉ gõ phím, thầy niệm code. Mỗi dòng đều mang
+                năng lượng tích cực và cú pháp thanh tịnh.
+              </div>
+
+              <div class="text-gray-600 dark:text-gray-400 text-lg">
+                💻 Thầy tu theo trường phái Fullstack Zen, am hiểu cả frontend
+                lẫn backend, nhưng không bao giờ để ego lấn át logic.
+              </div>
+              <br />
+              <div class="text-gray-600 dark:text-gray-400 text-lg">
+                🧠 Thầy tin rằng:{" "}
+                <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 transition-all duration-300 hover:from-primary-600 hover:to-primary-600 dark:hover:from-primary-400 dark:hover:to-primary-400">
+                  “Muốn code chạy, trước tiên tâm phải tĩnh.”
+                </div>
+              </div>
+              <div class="text-gray-600 dark:text-gray-400 text-lg">
+                Thầy thường chia sẻ giáo lý tại ngôi chùa GitHub, giảng pháp qua
+                các dự án open-source, và ban phước lành cho những ai lỡ tay xóa
+                nhầm production.
+              </div>
+              {/* Signature */}
+              <div class="mt-8 flex justify-end">
+                <div class="text-right">
+                  <div
+                    class="font-['Brush_Script_MT','cursive'] text-2xl text-gray-700 dark:text-gray-300 italic"
+                    style="font-family: 'Brush Script MT', 'Bradley Hand', cursive;"
+                  >
+                    CaamrDev
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

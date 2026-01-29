@@ -13,7 +13,7 @@ export const handler: Handlers<HomeData> = {
   async GET(_req, ctx) {
     const posts = await getPosts();
     const profile = await getProfile(); // Fetch profile
-    return ctx.render({ posts: posts.slice(0, 3), profile });
+    return ctx.render({ posts: posts.slice(0, 5), profile });
   },
 };
 
@@ -35,17 +35,17 @@ export default function Home({ data }: PageProps<HomeData>) {
             </div>
           </div>
           <div class="text-center md:text-left">
-            <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 min-h-[3.5rem] md:min-h-[4rem]">
-              <div class="mb-2">Xin chào 😀</div>
-              <div class="block">
-                <Typewriter
-                  strings={profile.titles}
-                  typeSpeed={50}
-                  delayBeforeDelete={2500}
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 drop-shadow-lg"
-                />
-              </div>
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2">
+              Xin chào, tôi là:
             </h1>
+            <div class="text-xl md:text-3xl lg:text-4xl font-bold min-h-[3rem] md:min-h-[3.5rem]">
+              <Typewriter
+                strings={profile.titles}
+                typeSpeed={50}
+                delayBeforeDelete={2500}
+                className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 drop-shadow-lg"
+              />
+            </div>
             <div class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl min-h-[4rem]">
               <Typewriter
                 strings={profile.bio}

@@ -46,21 +46,24 @@ export const handler: Handlers<NewPostData> = {
       .map((t) => t.trim())
       .filter((t) => t);
 
+    // Helper to escape quotes in YAML values
+    const escapeYAML = (str: string) => str.replace(/"/g, '\\"');
+
     let frontmatter = `---
-title: ${title}
-date: ${date}
-excerpt: ${excerpt}
-author: ${author}`;
+title: "${escapeYAML(title)}"
+date: "${date}"
+excerpt: "${escapeYAML(excerpt)}"
+author: "${escapeYAML(author)}"`;
 
     if (tagsArray.length > 0) {
       frontmatter += `
 tags:
-${tagsArray.map((t) => `  - ${t}`).join("\n")}`;
+${tagsArray.map((t) => `  - "${escapeYAML(t)}"`).join("\n")}`;
     }
 
     if (thumbnail) {
       frontmatter += `
-thumbnail: ${thumbnail}`;
+thumbnail: "${escapeYAML(thumbnail)}"`;
     }
 
     frontmatter += `
@@ -135,6 +138,10 @@ export default function NewPostPage({ data }: PageProps<NewPostData>) {
                 class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                 placeholder="vd: bai-viet-moi"
               />
+              <p class="mt-1 text-xs text-gray-500">
+                Lưu ý: Slug chỉ chứa chữ cái thường (a-z), số và dấu gạch ngang
+                (-). Không dán cả đường link vào đây.
+              </p>
             </div>
 
             <div>
@@ -217,7 +224,7 @@ export default function NewPostPage({ data }: PageProps<NewPostData>) {
               type="submit"
               class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg"
             >
-              Tạo bài viết
+              Lưu bài viết
             </button>
             <a
               href="/admin"

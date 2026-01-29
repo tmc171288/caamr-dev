@@ -1,11 +1,13 @@
 {
   "avatar": "http://103.185.184.164:8080/su-thay-han-quoc.webp",
   "titles": [
-    "Tôi là Caamr",
-    "Hay còn gọi là CaamrDev"
+    "Thầy Sư Viết Code",
+    "Pháp Danh CaamRDev",
+    "Code Thiền - Debug Định"
   ],
   "bio": [
-    "Tôi là một developer đam mê công nghệ. Đây là nơi tôi chia sẻ những suy nghĩ, kiến thức và dự án của mình.",
-    "I'm a developer passionate about technology. Here I share my thoughts, knowledge, and projects."
+    "🧘‍♂️ Thầy Sư Viết Code – Đạo Hạnh Fullstack, Tâm Tịnh Debug.\r\n💻 Thầy tu theo trường phái Fullstack Zen, am hiểu cả frontend lẫn backend, nhưng không bao giờ để ego lấn át logic.\r\n🧠 Thầy tin rằng:\r\n\"Muốn code chạy, trước tiên tâm phải tĩnh.",
+    "Thầy thường chia sẻ giáo lý tại ngôi chùa GitHub, giảng pháp qua các dự án open-source, và ban phước lành cho những ai lỡ tay xóa nhầm production. \r\n\r\n\"Muốn code chạy, trước tiên tâm phải tĩnh.\"\r\n",
+    "Nếu bạn gặp bug, hãy thắp nhang và niệm: 'console.log()' ba lần. 🙏 🙏 🙏"
   ]
 }

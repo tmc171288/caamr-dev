@@ -20,9 +20,9 @@ export async function getPosts(): Promise<Post[]> {
   const posts: Post[] = [];
   const allViews = await getAllViews();
 
-  try {
-    for await (const entry of Deno.readDir(POSTS_DIR)) {
-      if (entry.isFile && entry.name.endsWith(".md")) {
+  for await (const entry of Deno.readDir(POSTS_DIR)) {
+    if (entry.isFile && entry.name.endsWith(".md")) {
+      try {
         const filePath = join(POSTS_DIR, entry.name);
         const content = await Deno.readTextFile(filePath);
         const { attrs, body } = extract<{
@@ -37,8 +37,8 @@ export async function getPosts(): Promise<Post[]> {
         const slug = entry.name.replace(".md", "");
         posts.push({
           slug,
-          title: attrs.title,
-          date: attrs.date,
+          title: attrs.title || "Untitled",
+          date: attrs.date || new Date().toISOString(),
           excerpt: attrs.excerpt || body.substring(0, 150) + "...",
           content: body,
           tags: attrs.tags,
@@ -46,10 +46,11 @@ export async function getPosts(): Promise<Post[]> {
           author: attrs.author || "Caamr",
           views: allViews[slug] || 0,
         });
+      } catch (err) {
+        console.error(`Error parsing post ${entry.name}:`, err);
+        // Continue to the next post
       }
     }
-  } catch {
-    // Posts directory doesn't exist yet
   }
 
   return posts.sort((a, b) =>
