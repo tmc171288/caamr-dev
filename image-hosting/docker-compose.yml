@@ -1,0 +1,22 @@
+services:
+  # Nginx để serve ảnh (tăng tốc độ tải ảnh) -> xem ảnh tại http://your-vps-ip:8080/ten-anh.png
+  nginx:
+    image: nginx:alpine
+    container_name: image_host_nginx
+    ports:
+      - "8080:80" # Cổng truy cập ảnh công khai
+    volumes:
+      - ./data:/usr/share/nginx/html # Map thư mục ảnh vào nginx
+    restart: always
+
+  # Filebrowser để quản lý/upload ảnh -> truy cập tại http://your-vps-ip:8081
+  filebrowser:
+    image: filebrowser/filebrowser
+    container_name: image_host_manager
+    ports:
+      - "8081:80" # Cổng quản lý/upload file
+    volumes:
+      - ./data:/srv # Map cùng thư mục ảnh vào filebrowser để quản lý
+      - ./filebrowser.db:/database.db
+      - ./filebrowser.json:/config/settings.json
+    restart: always
