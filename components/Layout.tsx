@@ -20,7 +20,7 @@ export default function Layout({ children }: LayoutProps) {
             </p>
             <div class="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/tmc171288"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-gray-500 hover:text-green-600 dark:hover:text-green-400 transition-colors"
@@ -28,20 +28,18 @@ export default function Layout({ children }: LayoutProps) {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/caamr-dev-ab2ba627b/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-500 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                class="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 LinkedIn
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-gray-500 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                href="mailto:minhcam806@gmail.com"
+                class="text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors"
               >
-                Twitter
+                Email
               </a>
             </div>
           </div>

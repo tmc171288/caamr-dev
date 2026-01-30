@@ -16,6 +16,8 @@ import * as $api_upload from "./routes/api/upload.ts";
 import * as $blog_slug_ from "./routes/blog/[slug].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $rss_xml from "./routes/rss.xml.ts";
+import * as $sitemap_xml from "./routes/sitemap.xml.ts";
 import * as $DeleteButton from "./islands/DeleteButton.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $ImageUploader from "./islands/ImageUploader.tsx";
@@ -38,6 +40,8 @@ const manifest = {
     "./routes/blog/[slug].tsx": $blog_slug_,
     "./routes/blog/index.tsx": $blog_index,
     "./routes/index.tsx": $index,
+    "./routes/rss.xml.ts": $rss_xml,
+    "./routes/sitemap.xml.ts": $sitemap_xml,
   },
   islands: {
     "./islands/DeleteButton.tsx": $DeleteButton,

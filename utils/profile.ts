@@ -2,6 +2,12 @@ export interface ProfileData {
   avatar: string;
   titles: string[];
   bio: string[];
+  social?: {
+    github?: string;
+    linkedin?: string;
+    twitter?: string;
+  };
+  email?: string;
 }
 
 const PROFILE_FILE = "profile.json";

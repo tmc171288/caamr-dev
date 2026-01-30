@@ -31,8 +31,9 @@ export default function About({ data }: PageProps<AboutData>) {
               <img
                 src="http://103.185.184.164:8080/non-la-su-thay.png"
                 alt="Nón lá"
-                class="absolute -top-6 -left-8 w-20 h-20 md:w-24 md:h-24 object-contain z-10 transform -rotate-25"
+                class="absolute -top-8 -left-6 w-20 h-20 md:w-24 md:h-24 object-contain z-10 transform -rotate-12"
               />
+
               <div class="w-40 h-40 rounded-full overflow-hidden shadow-2xl shadow-green-500/50 dark:shadow-green-400/30 border-4 border-white dark:border-gray-800 relative">
                 <img
                   src={profile.avatar}
@@ -51,7 +52,7 @@ export default function About({ data }: PageProps<AboutData>) {
                 />
               </h2>
               <div class="text-gray-600 dark:text-gray-400 text-lg">
-                🧘Thầy Sư Viết Code{"  "}
+                🧘Thầy sư viết Code.{"  "}
                 <strong>Đạo Hạnh Fullstack, Tâm Tịnh Debug</strong>. Ngày xưa,
                 thầy vốn là người tu hành, sống ẩn dật giữa rừng sâu… cho đến
                 một ngày, khi đang thiền dưới gốc bồ đề, thầy nghe tiếng gọi từ
@@ -134,7 +135,7 @@ export default function About({ data }: PageProps<AboutData>) {
           </h2>
           <div class="flex flex-wrap gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/tmc171288"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 hover:-translate-y-1 no-underline
@@ -147,12 +148,12 @@ export default function About({ data }: PageProps<AboutData>) {
               GitHub
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/caamr-dev-ab2ba627b/"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 hover:-translate-y-1 no-underline
-                     bg-white text-gray-900 shadow-md hover:shadow-green-500/50 hover:text-green-600
-                     dark:bg-gray-900 dark:text-white dark:hover:shadow-green-500/30 dark:hover:text-green-400 dark:border dark:border-gray-700"
+                     bg-white text-gray-900 shadow-md hover:shadow-blue-500/50 hover:text-blue-600
+                     dark:bg-gray-900 dark:text-white dark:hover:shadow-blue-500/30 dark:hover:text-blue-400 dark:border dark:border-gray-700"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -160,23 +161,10 @@ export default function About({ data }: PageProps<AboutData>) {
               LinkedIn
             </a>
             <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:minhcam806@gmail.com"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 hover:-translate-y-1 no-underline
-                     bg-white text-gray-900 shadow-md hover:shadow-green-500/50 hover:text-green-600
-                     dark:bg-gray-900 dark:text-white dark:hover:shadow-green-500/30 dark:hover:text-green-400 dark:border dark:border-gray-700"
-            >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-              </svg>
-              Twitter
-            </a>
-            <a
-              href="mailto:hello@caamr.dev"
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 hover:-translate-y-1 no-underline
-                     bg-white text-gray-900 shadow-md hover:shadow-green-500/50 hover:text-green-600
-                     dark:bg-gray-900 dark:text-white dark:hover:shadow-green-500/30 dark:hover:text-green-400 dark:border dark:border-gray-700"
+                     bg-white text-gray-900 shadow-md hover:shadow-red-500/50 hover:text-red-600
+                     dark:bg-gray-900 dark:text-white dark:hover:shadow-red-500/30 dark:hover:text-red-400 dark:border dark:border-gray-700"
             >
               <svg
                 class="w-5 h-5"

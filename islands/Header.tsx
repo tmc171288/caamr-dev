@@ -39,16 +39,13 @@ export default function Header() {
       <nav class="max-w-4xl mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <a href="/" class="flex items-center gap-2">
-            <div class="relative inline-block">
-              {/* Nón lá decoration on "Dev" */}
-              <img
-                src="http://103.185.184.164:8080/non-la-su-thay.png"
-                alt="Nón lá"
-                class="absolute -top-1 right-2 w-6 h-6 object-contain z-10 transform rotate-12"
-              />
-              <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 transition-all duration-300 hover:from-primary-600 hover:to-primary-600 dark:hover:from-primary-400 dark:hover:to-primary-400">
-                Caamr.Dev
-              </div>
+            <img
+              src="http://103.185.184.164:8080/logo-su-thay-dev.png"
+              alt="Caamr.Dev Logo"
+              class="w-8 h-8 object-contain"
+            />
+            <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 transition-all duration-300 hover:from-primary-600 hover:to-primary-600 dark:hover:from-primary-400 dark:hover:to-primary-400">
+              Caamr.Dev
             </div>
           </a>
 

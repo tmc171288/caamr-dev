@@ -5,6 +5,10 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
+  // Calculate reading time (approx 200 words per minute)
+  const wordCount = post.content?.split(/\s+/).length || 0;
+  const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
   return (
     <article class="group bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary-600 dark:hover:border-primary-400">
       <a href={`/blog/${post.slug}`} class="block">
@@ -13,12 +17,13 @@ export default function BlogCard({ post }: BlogCardProps) {
             <img
               src={post.thumbnail}
               alt={post.title}
+              loading="lazy"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
         )}
         <div class="p-6">
-          <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+          <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3 flex-wrap">
             <time dateTime={post.date}>
               {new Date(post.date).toLocaleDateString("vi-VN", {
                 year: "numeric",
@@ -29,6 +34,10 @@ export default function BlogCard({ post }: BlogCardProps) {
             <div class="flex items-center gap-1">
               <span>•</span>
               <span>👁️ {post.views || 0}</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span>•</span>
+              <span>📖 {readingTime} phút đọc</span>
             </div>
             {post.tags && post.tags.length > 0 && (
               <>

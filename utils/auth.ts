@@ -4,7 +4,7 @@ const SESSION_COOKIE_NAME = "admin_session";
 const SESSION_TOKEN = crypto.randomUUID();
 
 export function getAdminPassword(): string {
-  return Deno.env.get("ADMIN_PASSWORD") || "admin123";
+  return Deno.env.get("ADMIN_PASSWORD") || "cam987806@1712";
 }
 
 export function verifyPassword(password: string): boolean {
