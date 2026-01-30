@@ -25,8 +25,14 @@ export default function Home({ data }: PageProps<HomeData>) {
       {/* Hero Section */}
       <section class="py-12 md:py-20">
         <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="flex-shrink-0">
-            <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl shadow-green-200/50 dark:shadow-green-400/30 border-4 border-gray-800 dark:border-white">
+          <div class="flex-shrink-0 relative">
+            {/* Nón lá decoration */}
+            <img
+              src="http://103.185.184.164:8080/non-la-su-thay.png"
+              alt="Nón lá"
+              class="absolute -top-8 -left-6 w-24 h-24 md:w-32 md:h-32 object-contain z-10 transform -rotate-12"
+            />
+            <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl shadow-green-200/50 dark:shadow-green-400/30 border-4 border-gray-800 dark:border-white relative">
               <img
                 src={profile.avatar}
                 alt="Avatar"

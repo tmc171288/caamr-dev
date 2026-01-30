@@ -26,8 +26,14 @@ export default function About({ data }: PageProps<AboutData>) {
         {/* Dynamic Hero Section */}
         <section class="mb-12">
           <div class="flex flex-col md:flex-row gap-8 items-start">
-            <div class="flex-shrink-0">
-              <div class="w-40 h-40 rounded-full overflow-hidden shadow-2xl shadow-green-500/50 dark:shadow-green-400/30 border-4 border-white dark:border-gray-800">
+            <div class="flex-shrink-0 relative">
+              {/* Nón lá decoration */}
+              <img
+                src="http://103.185.184.164:8080/non-la-su-thay.png"
+                alt="Nón lá"
+                class="absolute -top-6 -left-8 w-20 h-20 md:w-24 md:h-24 object-contain z-10 transform -rotate-25"
+              />
+              <div class="w-40 h-40 rounded-full overflow-hidden shadow-2xl shadow-green-500/50 dark:shadow-green-400/30 border-4 border-white dark:border-gray-800 relative">
                 <img
                   src={profile.avatar}
                   alt="Avatar"

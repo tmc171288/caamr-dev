@@ -14,3 +14,11 @@ deno task start
 ```
 
 This will watch the project directory and restart as necessary.
+
+# Cấp quyền đọc/ghi cho tất cả file trong thư mục data (bao gồm cả file mới up)
+
+chmod -R 777 data
+
+# Khởi động lại Nginx cho chắc
+
+docker compose restart nginx
